@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tło gradientowe -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F0E5FF"></stop>
+      <stop offset="100%" stop-color="#D6B3FF"></stop>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bgGradient)"></circle>
+
+  <!-- Stworek główny -->
+  <circle cx="100" cy="120" r="50" fill="#8A4FFF"></circle>
+
+  <!-- Oczy -->
+  <circle cx="80" cy="110" r="10" fill="#ffffff"></circle>
+  <circle cx="120" cy="110" r="10" fill="#ffffff"></circle>
+  <circle cx="80" cy="110" r="5" fill="#0000009f"></circle>
+  <circle cx="120" cy="110" r="5" fill="#0000009f"></circle>
+
+  <!-- Uśmiech -->
+  <path d="M75 140 Q100 160 125 140" stroke="#9B8FFF" stroke-width="5" fill="transparent" stroke-linecap="round"></path>
+</svg>
