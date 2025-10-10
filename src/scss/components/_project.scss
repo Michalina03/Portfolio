@@ -1,0 +1,194 @@
+@import "../utils/variables";
+
+.projects {
+  position: relative;
+  background-color: $white-beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  overflow: hidden;
+  margin-top: 5%;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: $beige;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: $gray;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.6fr;
+    align-items: center;
+    background: $white;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    padding: 1rem 1.5rem;
+    transition: transform $transition, background-color $transition, box-shadow $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: $beige-lite;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-left: 120px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition;
+    }
+
+    .projects__item:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__info {
+    text-align: left;
+    padding-left: 1rem;
+
+    .projects__name {
+      font-size: 1.4rem;
+      color: $beige;
+      font-weight: 700;
+    }
+
+    .projects__type {
+      font-size: 1rem;
+      color: $gray;
+    }
+
+    .projects__status {
+      display: inline-block;
+      background: $beige;
+      color: $white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      animation: pulse 2s infinite;
+    }
+  }
+
+  &__tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: $beige;
+    font-weight: 600;
+
+    .projects__links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .projects__link {
+      color: $gray;
+      font-size: 1.3rem;
+      transition: color $transition, transform $transition;
+
+      &:hover {
+        color: $beige;
+        transform: translateY(-3px);
+      }
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+
+    .projects__tech-name {
+      color: $gray;
+      font-size: 0.95rem;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  &__blob {
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle at 40% 40%, $beige-lite, transparent 70%);
+    filter: blur(100px);
+    animation: float 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    from {
+      transform: translate(0, -10%) scale(1);
+    }
+    to {
+      transform: translate(0, 10%) scale(1.1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  // --- Responsywność ---
+  @media (max-width: $breakpoint-mobile) {
+    height: auto;
+    padding-bottom: 3rem;
+
+    &__item {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 1.2rem;
+    }
+
+    &__image {
+      height: 180px;
+      margin-bottom: 1rem;
+    }
+
+    &__info {
+      padding-left: 0;
+    }
+  }
+}

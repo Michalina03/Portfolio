@@ -1,0 +1,129 @@
+@import "../utils/variables";
+
+.contact {
+  position: relative;
+  height: calc(100vh - #{$footer-height});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white-beige;
+  font-family: $font-family;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    color: $black;
+    max-width: 700px;
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $beige;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: $gray;
+    margin-bottom: 3rem;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: $white;
+    border-radius: $radius;
+    padding: 1rem 1.8rem;
+    box-shadow: $shadow;
+    font-weight: 600;
+    color: $beige;
+    text-decoration: none;
+    transition: transform $transition, background-color $transition, color $transition;
+    backdrop-filter: blur(4px);
+
+    svg {
+      transition: transform $transition;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      background-color: $beige;
+      color: $white;
+
+      svg {
+        transform: rotate(-10deg);
+      }
+    }
+
+    &--linkedin:hover {
+      background-color: #0a66c2;
+    }
+
+    &--github:hover {
+      background-color: #24292e;
+    }
+
+    &--email:hover {
+      background-color: $gray;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  &__blob {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at 30% 30%, $beige-lite, transparent 70%);
+    filter: blur(100px);
+    animation: float 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    from {
+      transform: translate(-50%, -10%) scale(1);
+    }
+    to {
+      transform: translate(-50%, 10%) scale(1.1);
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    &__links {
+      gap: 1rem;
+    }
+
+    &__link {
+      padding: 0.8rem 1.4rem;
+      font-size: 0.9rem;
+    }
+  }
+}

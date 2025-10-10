@@ -1,0 +1,25 @@
+$white: #ffffff;          // zostaje biały
+$beige: #8A4FFF;          // intensywny fiolet zamiast bezowego
+$black: #0000009f;          // zostaje czarny
+$gray: #9B8FFF;           // jasny fioletowy / liliowy pasujący do $beige
+$white-beige: #F0E5FF;    // bardzo jasny fiolet zamiast białawego-beżowego
+$beige-lite: #D6B3FF;     // jaśniejszy, pastelowy fiolet zamiast E0D8C3
+
+// Rozmiary
+$header-height: 11vh;
+$footer-height: 10vh;
+
+// Responsywność
+$breakpoint-mobile: 768px;
+
+$font-family: 'Alan Sans', sans-serif;
+
+$transition: 0.3s ease;
+$radius: 2rem;
+$shadow: 0 10px 25px rgba(0,0,0,0.1);
+$section-padding: 5vh 5vw;
+$section-radius: 20px;
+$section-shadow: 0 8px 20px rgba(0,0,0,0.1);
+$highlight-color: $beige;
+$text-color: $black;
+$text-secondary: $gray;
