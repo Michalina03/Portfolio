@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -333,7 +334,6 @@ table {
   justify-content: center;
   font-family: "Alan Sans", sans-serif;
   overflow: hidden;
-  margin-top: 5%;
 }
 .projects__content {
   position: relative;
@@ -342,6 +342,7 @@ table {
   width: 100%;
   padding: 2rem;
   text-align: center;
+  margin-top: 6%;
 }
 .projects__title {
   font-size: 2.6rem;
@@ -485,7 +486,7 @@ table {
     padding: 1.2rem;
   }
   .projects__image {
-    height: 180px;
+    height: 100px;
     margin-bottom: 1rem;
   }
   .projects__info {
@@ -493,18 +494,23 @@ table {
   }
 }
 
+@media (max-width: 768px) {
+  .projects {
+    margin-top: 10%; /* inna wartość dla telefonów */
+  }
+}
 .about {
   font-family: "Alan Sans", sans-serif;
   color: rgba(0, 0, 0, 0.6235294118);
   padding: 5vh 5vw;
-  min-height: calc(100vh - 11vh - 10vh);
+  min-height: calc(100vh - 10vh);
   background-color: #F0E5FF;
-  margin-top: 5%;
 }
 .about__container {
   display: flex;
   flex-direction: column;
   gap: 4vh;
+  margin-top: 6%;
 }
 .about__intro {
   display: flex;
@@ -588,6 +594,11 @@ table {
   }
 }
 
+@media (max-width: 768px) {
+  .about {
+    margin-top: 11%; /* inna wartość dla telefonów */
+  }
+}
 .contact {
   position: relative;
   height: calc(100vh - 10vh);

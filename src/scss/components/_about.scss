@@ -3,14 +3,15 @@
   font-family: $font-family;
   color: $text-color;
   padding: $section-padding;
-  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  min-height: calc(100vh  - #{$footer-height});
   background-color: $white-beige;
-  margin-top: 5%;
+  
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 4vh;
+    margin-top: 6%;
   }
 
   &__intro {
@@ -102,5 +103,12 @@
         flex: 1 1 100%;
       }
     }
+  }
+
+}
+
+  @media (max-width: $breakpoint-mobile) {
+  .about {
+    margin-top: 11%; /* inna wartość dla telefonów */
   }
 }

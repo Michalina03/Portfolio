@@ -8,7 +8,7 @@
   justify-content: center;
   font-family: $font-family;
   overflow: hidden;
-  margin-top: 5%;
+
 
   &__content {
     position: relative;
@@ -17,6 +17,7 @@
     width: 100%;
     padding: 2rem;
     text-align: center;
+      margin-top: 6%;
   }
 
   &__title {
@@ -183,12 +184,18 @@
     }
 
     &__image {
-      height: 180px;
+      height: 100px;
       margin-bottom: 1rem;
     }
 
     &__info {
       padding-left: 0;
     }
+  }
+
+}
+  @media (max-width: $breakpoint-mobile) {
+  .projects {
+    margin-top: 10%; /* inna wartość dla telefonów */
   }
 }
