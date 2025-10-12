@@ -1,8 +1,8 @@
 import React from 'react'
-import ProfilePic from '../img/about/wakacje.jpg'; // przykładowe zdjęcie
-import PetPic from '../img/about/monti.jpg'; // zdjęcie zwierzaka
-import HobbyPic from '../img/about/hobby.jpg'; // zdjęcie hobby
-import CodePic from '../img/about/programowanie.jpeg'; // zdjęcie programowania
+import ProfilePic from '../img/about/wakacje.webp'; // przykładowe zdjęcie
+import PetPic from '../img/about/monti.webp'; // zdjęcie zwierzaka
+import HobbyPic from '../img/about/hobby.webp'; // zdjęcie hobby
+import CodePic from '../img/about/programowanie.webp'; // zdjęcie programowania
 function About() {
   return   (
 <section className="about" id="about">
