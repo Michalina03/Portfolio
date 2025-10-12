@@ -1,14 +1,29 @@
-import React from 'react'
-import { FaReact, FaPython, FaJava, FaAndroid, FaMicrosoft, FaCode, FaGithub, FaGlobe } from "react-icons/fa";
+import React from "react";
+import {
+  FaReact,
+  FaPython,
+  FaJava,
+  FaAndroid,
+  FaMicrosoft,
+  FaGithub,
+  FaGlobe,
+} from "react-icons/fa";
 
+// 🧠 Importy wszystkich obrazków z folderu src/img
+// Vite automatycznie zbuduje ścieżki względne działające lokalnie i po deployu
+const images = import.meta.glob("../img/*.webp", { eager: true });
+
+const getImage = (filename) => {
+  const path = `../img/${filename}`;
+  return images[path]?.default || "";
+};
 
 const projects = [
-  // --- APLIKACJE ---
   {
     name: "BookApp",
     tech: "C#",
     icon: <FaMicrosoft />,
-    img: "/book.webp",
+    img: "book.webp",
     type: "Aplikacja desktopowa",
     github: "https://github.com/Michalina03/BookApp",
   },
@@ -16,7 +31,7 @@ const projects = [
     name: "Student-Journal",
     tech: "C#",
     icon: <FaMicrosoft />,
-    img: "/journal.webp",
+    img: "journal.webp",
     type: "Aplikacja desktopowa",
     github: "https://github.com/Michalina03/Student-Journal",
   },
@@ -24,7 +39,7 @@ const projects = [
     name: "SmallShop",
     tech: "Python",
     icon: <FaPython />,
-    img: "/shop.webp",
+    img: "shop.webp",
     type: "Aplikacja do zarządzania małym sklepem",
     github: "https://github.com/Michalina03/SmallShop",
   },
@@ -32,18 +47,16 @@ const projects = [
     name: "The Game",
     tech: "Python",
     icon: <FaPython />,
-    img: "/game.webp",
+    img: "game.webp",
     type: "Gra napisana w Pythonie",
     github: "https://github.com/Michalina03/TheGame",
   },
-
-  // --- STRONY ---
   {
     name: "Dast",
     tech: "React",
     icon: <FaReact />,
-    img: "/dast.webp",
-    type: "Strona internetowa dla firmy dast(w procesie)",
+    img: "dast.webp",
+    type: "Strona internetowa dla firmy Dast (w procesie)",
     status: "w procesie",
     demo: "https://michalina03.github.io/BackupDast/",
   },
@@ -51,7 +64,7 @@ const projects = [
     name: "Template",
     tech: "React",
     icon: <FaReact />,
-    img: "/template.webp",
+    img: "template.webp",
     type: "Szablon strony internetowej",
     demo: "https://michalina03.github.io/Template/",
   },
@@ -59,7 +72,7 @@ const projects = [
     name: "MinecraftAPI",
     tech: "JavaScript",
     icon: <FaJava />,
-    img: "/minecraft.webp",
+    img: "minecraft.webp",
     type: "Strona z API dla gry Minecraft",
     demo: "https://michalina03.github.io/MinecraftAPI/",
   },
@@ -67,11 +80,12 @@ const projects = [
     name: "VictoriaGrochów",
     tech: "Android Studio",
     icon: <FaAndroid />,
-    img: "/victoria.webp",
+    img: "victoria.webp",
     type: "Aplikacja mobilna (w procesie)",
     status: "w procesie",
   },
 ];
+
 
 function Project() {
   return (
