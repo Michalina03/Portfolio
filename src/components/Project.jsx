@@ -9,21 +9,22 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-// 🧠 Importy wszystkich obrazków z folderu src/img
-// Vite automatycznie zbuduje ścieżki względne działające lokalnie i po deployu
-const images = import.meta.glob("../img/*.webp", { eager: true });
-
-const getImage = (filename) => {
-  const path = `../img/${filename}`;
-  return images[path]?.default || "";
-};
+// 🔹 Importujemy wszystkie obrazki
+import Book from "../img/book.webp";
+import Journal from "../img/journal.webp";
+import Shop from "../img/shop.webp";
+import Game from "../img/game.webp";
+import Dast from "../img/dast.webp";
+import Template from "../img/template.webp";
+import Minecraft from "../img/minecraft.webp";
+import Victoria from "../img/victoria.webp";
 
 const projects = [
   {
     name: "BookApp",
     tech: "C#",
     icon: <FaMicrosoft />,
-    img: "book.webp",
+    img: Book,
     type: "Aplikacja desktopowa",
     github: "https://github.com/Michalina03/BookApp",
   },
@@ -31,7 +32,7 @@ const projects = [
     name: "Student-Journal",
     tech: "C#",
     icon: <FaMicrosoft />,
-    img: "journal.webp",
+    img: Journal,
     type: "Aplikacja desktopowa",
     github: "https://github.com/Michalina03/Student-Journal",
   },
@@ -39,7 +40,7 @@ const projects = [
     name: "SmallShop",
     tech: "Python",
     icon: <FaPython />,
-    img: "shop.webp",
+    img: Shop,
     type: "Aplikacja do zarządzania małym sklepem",
     github: "https://github.com/Michalina03/SmallShop",
   },
@@ -47,7 +48,7 @@ const projects = [
     name: "The Game",
     tech: "Python",
     icon: <FaPython />,
-    img: "game.webp",
+    img: Game,
     type: "Gra napisana w Pythonie",
     github: "https://github.com/Michalina03/TheGame",
   },
@@ -55,7 +56,7 @@ const projects = [
     name: "Dast",
     tech: "React",
     icon: <FaReact />,
-    img: "dast.webp",
+    img: Dast,
     type: "Strona internetowa dla firmy Dast (w procesie)",
     status: "w procesie",
     demo: "https://michalina03.github.io/BackupDast/",
@@ -64,7 +65,7 @@ const projects = [
     name: "Template",
     tech: "React",
     icon: <FaReact />,
-    img: "template.webp",
+    img: Template,
     type: "Szablon strony internetowej",
     demo: "https://michalina03.github.io/Template/",
   },
@@ -72,7 +73,7 @@ const projects = [
     name: "MinecraftAPI",
     tech: "JavaScript",
     icon: <FaJava />,
-    img: "minecraft.webp",
+    img: Minecraft,
     type: "Strona z API dla gry Minecraft",
     demo: "https://michalina03.github.io/MinecraftAPI/",
   },
@@ -80,7 +81,7 @@ const projects = [
     name: "VictoriaGrochów",
     tech: "Android Studio",
     icon: <FaAndroid />,
-    img: "victoria.webp",
+    img: Victoria,
     type: "Aplikacja mobilna (w procesie)",
     status: "w procesie",
   },
@@ -100,7 +101,7 @@ function Project() {
           {projects.map((project, index) => (
             <div key={index} className="projects__item">
               <div className="projects__image">
-                <img src={`src/img/${project.img}`} alt={project.name} />
+                <img src={project.img} alt={project.name} loading="lazy" />
               </div>
 
               <div className="projects__info">
