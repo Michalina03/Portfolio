@@ -8,6 +8,7 @@ import {
   FaGithub,
   FaGlobe,
 } from "react-icons/fa";
+import { SiSqlite } from "react-icons/si";
 
 // 🔹 Importujemy wszystkie obrazki
 import Book from "../img/book.webp";
@@ -15,7 +16,7 @@ import Journal from "../img/journal.webp";
 import Shop from "../img/shop.webp";
 import Game from "../img/game.webp";
 import Dast from "../img/dast.webp";
-import Template from "../img/template.webp";
+import Sqlite from "../img/sqlite.png";
 import Minecraft from "../img/minecraft.webp";
 import Victoria from "../img/victoria.webp";
 
@@ -62,12 +63,12 @@ const projects = [
     demo: "https://michalina03.github.io/BackupDast/",
   },
   {
-    name: "Template",
-    tech: "React",
-    icon: <FaReact />,
-    img: Template,
-    type: "Szablon strony internetowej",
-    demo: "https://michalina03.github.io/Template/",
+    name: "PeopleDatabase",
+    tech: "SQLite",
+    icon: <SiSqlite />,
+    img: Sqlite,
+    type: "Baza danych Użytkowników",
+    demo: "https://github.com/Michalina03/PeopleDatabase",
   },
   {
     name: "MinecraftAPI",
