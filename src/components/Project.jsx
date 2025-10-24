@@ -54,6 +54,14 @@ const projects = [
     github: "https://github.com/Michalina03/TheGame",
   },
   {
+    name: "PeopleDatabase",
+    tech: "SQLite",
+    icon: <SiSqlite />,
+    img: Sqlite,
+    type: "Baza danych Użytkowników",
+    github: "https://github.com/Michalina03/PeopleDatabase",
+  },
+  {
     name: "Dast",
     tech: "React",
     icon: <FaReact />,
@@ -61,14 +69,6 @@ const projects = [
     type: "Strona internetowa dla firmy Dast (w procesie)",
     status: "w procesie",
     demo: "https://michalina03.github.io/BackupDast/",
-  },
-  {
-    name: "PeopleDatabase",
-    tech: "SQLite",
-    icon: <SiSqlite />,
-    img: Sqlite,
-    type: "Baza danych Użytkowników",
-    demo: "https://github.com/Michalina03/PeopleDatabase",
   },
   {
     name: "MinecraftAPI",
