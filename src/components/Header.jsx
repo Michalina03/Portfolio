@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <h1 className="header__title">Portfolio - Michalina Janowska</h1>
+        <h1 className="header__title">Michalina Janowska</h1>
         <button className="header__hamburger" onClick={toggleMenu}>
           <span className="header__hamburger__line"></span>
           <span className="header__hamburger__line"></span>
@@ -23,13 +23,13 @@ export default function Header() {
               <Link to="/" onClick={() => setIsOpen(false)}>Strona Główna</Link>
             </li>
             <li className="header__nav__list__item">
-              <Link to="/project" onClick={() => setIsOpen(false)}>Projekty</Link>
+              <Link to="/projekty" onClick={() => setIsOpen(false)}>Projekty</Link>
             </li>
             <li className="header__nav__list__item">
-              <Link to="/about" onClick={() => setIsOpen(false)}>O Mnie</Link>
+              <Link to="/o mnie" onClick={() => setIsOpen(false)}>O Mnie</Link>
             </li>
             <li className="header__nav__list__item">
-              <Link to="/contact" onClick={() => setIsOpen(false)}>Kontakt</Link>
+              <Link to="/kontakt" onClick={() => setIsOpen(false)}>Kontakt</Link>
             </li>
           </ul>
         </nav>

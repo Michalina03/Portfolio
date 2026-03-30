@@ -17,9 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <Header />
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/project" element={<Project />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/contact" element={<Contact />} />
+    <Route path="/projekty" element={<Project />} />
+    <Route path="/o mnie" element={<About />} />
+    <Route path="/kontakt" element={<Contact />} />
   </Routes>
   <Footer />
 </HashRouter>

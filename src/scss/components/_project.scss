@@ -9,7 +9,6 @@
   font-family: $font-family;
   overflow: hidden;
 
-
   &__content {
     position: relative;
     z-index: 2;
@@ -17,20 +16,23 @@
     width: 100%;
     padding: 2rem;
     text-align: center;
-      margin-top: 6%;
+    margin-top: 6%;
   }
 
   &__title {
     font-size: 2.6rem;
     font-weight: 700;
-    color: $beige;
+    color: $color-primary;
     margin-bottom: 0.5rem;
   }
 
   &__subtitle {
-    color: $gray;
+    color: $color-text-body;
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
+     line-height: 1.6; // poprawia czytelność
+     text-align: center; // ładne wyśrodkowanie w sekcji hero
+     
   }
 
   &__list {
@@ -49,11 +51,12 @@
     padding: 1rem 1.5rem;
     transition: transform $transition, background-color $transition, box-shadow $transition;
     cursor: pointer;
+    min-width: 0;
 
     &:hover {
       transform: scale(1.02);
-      background-color: $beige-lite;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      background-color: rgba(42, 167, 200, 0.15);
+      box-shadow: 0 12px 25px rgba(31, 140, 166, 0.15);
     }
   }
 
@@ -62,7 +65,7 @@
     height: 100px;
     overflow: hidden;
     border-radius: 1rem;
-    margin-left: 120px;
+    margin-left: 0;
 
     img {
       width: 100%;
@@ -74,6 +77,14 @@
     .projects__item:hover & img {
       transform: scale(1.05);
     }
+
+    @media (min-width: 768px) {
+      margin-left: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-left: 80px;
+    }
   }
 
   &__info {
@@ -82,7 +93,7 @@
 
     .projects__name {
       font-size: 1.4rem;
-      color: $beige;
+      color: $color-text-main;
       font-weight: 700;
     }
 
@@ -93,7 +104,7 @@
 
     .projects__status {
       display: inline-block;
-      background: $beige;
+      background: $color-accent;
       color: $white;
       padding: 0.2rem 0.8rem;
       border-radius: 1rem;
@@ -108,7 +119,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    color: $beige;
+    color: $color-primary;
     font-weight: 600;
 
     .projects__links {
@@ -122,44 +133,19 @@
       transition: color $transition, transform $transition;
 
       &:hover {
-        color: $beige;
+        color: $color-accent;
         transform: translateY(-3px);
       }
     }
 
     svg {
       font-size: 2rem;
+      color: $color-primary;
     }
 
     .projects__tech-name {
-      color: $gray;
+      color: $color-text-body;
       font-size: 0.95rem;
-    }
-  }
-
-  &__background {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-  }
-
-  &__blob {
-    position: absolute;
-    top: -15%;
-    right: -10%;
-    width: 650px;
-    height: 650px;
-    background: radial-gradient(circle at 40% 40%, $beige-lite, transparent 70%);
-    filter: blur(100px);
-    animation: float 10s ease-in-out infinite alternate;
-  }
-
-  @keyframes float {
-    from {
-      transform: translate(0, -10%) scale(1);
-    }
-    to {
-      transform: translate(0, 10%) scale(1.1);
     }
   }
 
@@ -172,30 +158,78 @@
     }
   }
 
-  // --- Responsywność ---
+  // 🔥 TABLET
+  @media (max-width: 1024px) {
+    &__item {
+      grid-template-columns: 1fr 1.2fr 0.8fr;
+      gap: 1rem;
+    }
+
+    &__content {
+      padding: 1.5rem;
+    }
+  }
+
+  // 📱 MOBILE
   @media (max-width: $breakpoint-mobile) {
     height: auto;
     padding-bottom: 3rem;
+
+    &__content {
+      padding: 1rem;
+      margin-top: 15%;
+    }
 
     &__item {
       grid-template-columns: 1fr;
       text-align: center;
       padding: 1.2rem;
+      gap: 1rem;
     }
 
     &__image {
-      height: 100px;
-      margin-bottom: 1rem;
+      margin: 0 auto;
     }
 
     &__info {
       padding-left: 0;
     }
-  }
 
+    &__tech {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+
+      .projects__links {
+        justify-content: center;
+      }
+    }
+  }
 }
-  @media (max-width: $breakpoint-mobile) {
+
+// 📱 MAŁE TELEFONY
+@media (max-width: 400px) {
   .projects {
-    margin-top: 10%; /* inna wartość dla telefonów */
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__item {
+      padding: 1rem;
+    }
+
+    &__image {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+// 📱 dodatkowy margines mobile
+@media (max-width: $breakpoint-mobile) {
+  .projects {
+    margin-top: 10%;
   }
 }

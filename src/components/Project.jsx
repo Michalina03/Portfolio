@@ -22,6 +22,32 @@ import Victoria from "../img/victoria.webp";
 
 const projects = [
   {
+    name: "Dast",
+    tech: "React",
+    icon: <FaReact />,
+    img: Dast,
+    type: "Strona internetowa dla firmy Dast (w procesie)",
+    status: "w procesie",
+    demo: "https://michalina03.github.io/Dast/",
+  },
+  {
+    name: "MinecraftAPI",
+    tech: "JavaScript",
+    icon: <FaJava />,
+    img: Minecraft,
+    type: "Strona z API dla gry Minecraft",
+    demo: "https://michalina03.github.io/MinecraftAPI/",
+  },
+  {
+    name: "VictoriaGrochów",
+    tech: "Android Studio",
+    icon: <FaAndroid />,
+    img: Victoria,
+    type: "Aplikacja mobilna (w procesie)",
+    status: "w procesie",
+  },
+  
+  {
     name: "BookApp",
     tech: "C#",
     icon: <FaMicrosoft />,
@@ -61,31 +87,7 @@ const projects = [
     type: "Baza danych Użytkowników",
     github: "https://github.com/Michalina03/PeopleDatabase",
   },
-  {
-    name: "Dast",
-    tech: "React",
-    icon: <FaReact />,
-    img: Dast,
-    type: "Strona internetowa dla firmy Dast (w procesie)",
-    status: "w procesie",
-    demo: "https://michalina03.github.io/BackupDast/",
-  },
-  {
-    name: "MinecraftAPI",
-    tech: "JavaScript",
-    icon: <FaJava />,
-    img: Minecraft,
-    type: "Strona z API dla gry Minecraft",
-    demo: "https://michalina03.github.io/MinecraftAPI/",
-  },
-  {
-    name: "VictoriaGrochów",
-    tech: "Android Studio",
-    icon: <FaAndroid />,
-    img: Victoria,
-    type: "Aplikacja mobilna (w procesie)",
-    status: "w procesie",
-  },
+  
 ];
 
 
@@ -95,7 +97,8 @@ function Project() {
       <div className="projects__content">
         <h2 className="projects__title">Projekty</h2>
         <p className="projects__subtitle">
-          Kilka moich aplikacje i stron, stworzone w różnych technologiach.
+           Przedstawiam kilka moich najciekawszych stron i aplikacji stworzonych w różnych językach programowania.   
+           Niektóre z nich wciąż są w fazie rozwoju, a już wkrótce pojawią się kolejne, nowe projekty.
         </p>
 
         <div className="projects__list">

@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__text">© 2025 Moja Strona. Wszelkie prawa zastrzeżone.</p>
+        <p className="footer__text">© 2025 Michalina Janowska. Wszelkie prawa zastrzeżone.</p>
         <nav className="footer__nav">
           <ul className="footer__nav__list">
             <li className="footer__nav__list__item">

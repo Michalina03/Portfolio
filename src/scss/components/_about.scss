@@ -1,11 +1,11 @@
 @import "../utils/variables";
+
 .about {
   font-family: $font-family;
-  color: $text-color;
+  color: $color-text-main;
   padding: $section-padding;
-  min-height: calc(100vh  - #{$footer-height});
-  background-color: $white-beige;
-  
+  min-height: calc(100vh - #{$footer-height});
+  background-color: $color-background;
 
   &__container {
     display: flex;
@@ -24,28 +24,42 @@
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid $beige;
+      border: 5px solid $color-primary;
       box-shadow: $section-shadow;
     }
 
     &-text {
       flex: 1;
+
       .about__title {
         font-size: 2.5rem;
-        color: $beige;
+        color: $color-primary;
         margin-bottom: 1rem;
       }
+
       .about__description {
         font-size: 1.1rem;
-        color: $text-secondary;
-        line-height: 1.6;
+        color: $color-text-body;
+        line-height: 1.8; // większa przestrzeń między liniami
+        margin-bottom: 1.5rem; // odstęp po akapicie
+
+        a {
+          color: inherit; // dziedziczy kolor tekstu
+          text-decoration: none; // usuwa podkreślenie
+          transition: color 0.3s;
+          font-weight: bold;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
       }
     }
   }
 
   &__details {
     display: flex;
-    gap: 3vw;
+    gap: 4vw; // większy odstęp między kartami
     flex-wrap: wrap;
     justify-content: space-between;
 
@@ -57,10 +71,12 @@
       padding: 2rem;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem; // odstęp pionowy między kartami
 
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        background-color: $white-beige;
       }
 
       &-pic {
@@ -69,18 +85,19 @@
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 1rem;
-        border: 3px solid $beige-lite;
+        border: 3px solid $color-primary-light;
       }
 
       &-title {
         font-size: 1.5rem;
-        color: $beige;
+        color: $color-accent;
         margin-bottom: 0.5rem;
       }
 
       &-text {
         font-size: 1rem;
-        color: $text-secondary;
+        color: $color-text-body;
+        line-height: 1.6;
       }
     }
   }
@@ -99,16 +116,16 @@
     &__details {
       flex-direction: column;
       gap: 3vh;
+
       .about__card {
         flex: 1 1 100%;
       }
     }
   }
-
 }
 
-  @media (max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-mobile) {
   .about {
-    margin-top: 11%; /* inna wartość dla telefonów */
+    margin-top: 11%;
   }
 }

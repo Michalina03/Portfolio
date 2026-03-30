@@ -22,14 +22,31 @@
   &__title {
     font-size: 2.8rem;
     font-weight: 700;
-    color: $beige;
+    color: $color-primary;
     margin-bottom: 0.5rem;
   }
 
   &__subtitle {
     font-size: 1.2rem;
-    color: $gray;
+    color: $color-text-body;
     margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  &__email-text {
+    font-size: 1.2rem;
+    color: $color-primary;
+    font-weight: 600;
+    background-color: rgba($color-primary-light, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: background-color $transition, transform $transition;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.2);
+      transform: translateY(-2px);
+    }
   }
 
   &__links {
@@ -48,19 +65,20 @@
     padding: 1rem 1.8rem;
     box-shadow: $shadow;
     font-weight: 600;
-    color: $beige;
+    color: $color-text-main;
     text-decoration: none;
     transition: transform $transition, background-color $transition, color $transition;
     backdrop-filter: blur(4px);
 
     svg {
       transition: transform $transition;
+      color: $color-primary;
     }
 
     &:hover {
       transform: translateY(-5px);
-      background-color: $beige;
-      color: $white;
+      background-color: rgba($color-primary-light, 0.12);
+      color: $color-primary;
 
       svg {
         transform: rotate(-10deg);
@@ -68,34 +86,24 @@
     }
 
     &--linkedin:hover {
-      background-color: #0a66c2;
+      background-color: rgba($color-primary, 0.2);
+      color: $color-primary;
     }
 
     &--github:hover {
-      background-color: #24292e;
+      background-color: rgba($black, 0.1);
     }
 
     &--email:hover {
-      background-color: $gray;
-    }
+  background-color: rgba($color-accent, 0.1);
+  color: $color-accent;
+}
   }
 
   &__background {
     position: absolute;
     inset: 0;
     overflow: hidden;
-  }
-
-  &__blob {
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle at 30% 30%, $beige-lite, transparent 70%);
-    filter: blur(100px);
-    animation: float 10s ease-in-out infinite alternate;
   }
 
   @keyframes float {
@@ -115,6 +123,12 @@
     &__subtitle {
       font-size: 1rem;
       margin-bottom: 2rem;
+      line-height: 1.6; // poprawia czytelność
+    }
+
+    &__email-text {
+      font-size: 1rem;
+      padding: 0.15rem 0.3rem;
     }
 
     &__links {
